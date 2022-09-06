@@ -161,7 +161,7 @@ function nuevaCita(puta) {
     if(mascota === '' || propietario === '' || telefono === '' || fecha === '' || hora === '' || sintomas === '') {
         ui.imprimirAlerta('Todos los campos son obligatorios', 'error');
         return;
-    } if (propietario.includes(1,2,3,4,5,6,7,8,9,0)) {
+    } if (!/^[a-zA-Z\ áéíóúÁÉÍÓÚñÑ\s]*$/.test(propietario)) {
         ui.imprimirAlerta('Propietario solo debe incluir letras', 'error');
         return;
     } if ( telefono.length < 10 ) {
