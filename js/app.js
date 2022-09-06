@@ -53,7 +53,7 @@ class UI{
 
     imprimirCitas({citas}) {
         this.limpiarHTML();
-        
+
         citas.forEach(cita => {
             const {mascota, propietario, telefono, fecha, hora, sintomas , id} = cita;
 
@@ -159,8 +159,10 @@ function nuevaCita(puta) {
 
 // Validar
     if(mascota === '' || propietario === '' || telefono === '' || fecha === '' || hora === '' || sintomas === '') {
-        ui.imprimirAlerta('Todos los campos son obligatiros', 'error')
-
+        ui.imprimirAlerta('Todos los campos son obligatiros', 'error');
+        return;
+    } if ( telefono.length < 10 ) {
+        ui.imprimirAlerta('El teléfono debe ser a 10 dígitos', 'error');
         return;
     }
 
