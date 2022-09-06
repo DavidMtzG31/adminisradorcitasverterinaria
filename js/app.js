@@ -162,7 +162,7 @@ function nuevaCita(puta) {
         ui.imprimirAlerta('Todos los campos son obligatorios', 'error');
         return;
     } if (!/^[a-zA-Z\ áéíóúÁÉÍÓÚñÑ\s]*$/.test(propietario)) {
-        ui.imprimirAlerta('Propietario solo debe incluir letras', 'error');
+        ui.imprimirAlerta('El nombre del propietario solo debe incluir letras', 'error');
         return;
     } if ( telefono.length < 10 ) {
         ui.imprimirAlerta('El teléfono debe ser a 10 dígitos', 'error');
